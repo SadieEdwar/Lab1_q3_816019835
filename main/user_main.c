@@ -189,9 +189,9 @@ static esp_err_t i2c_example_master_ADS1115_init(i2c_port_t i2c_num)
     uint8_t cmd_data;
     vTaskDelay(100 / portTICK_RATE_MS);
     i2c_example_master_init();
-    cmd_data = 0x00;    // reset mpu6050
+    cmd_data = 0x00;    // reset ADS1115
     ESP_ERROR_CHECK(i2c_example_master_ADS1115_write(i2c_num, PWR_MGMT_1, &cmd_data, 1));
-    cmd_data = 0x07;    // Set the SMPRT_DIV
+    cmd_data = 0x07;    // Set the 
     ESP_ERROR_CHECK(i2c_example_master_ADS1115_write(i2c_num, SMPLRT_DIV, &cmd_data, 1));
     cmd_data = 0x06;    // Set the Low Pass Filter
     ESP_ERROR_CHECK(i2c_example_master_ADS1115_write(i2c_num, CONFIG, &cmd_data, 1));
